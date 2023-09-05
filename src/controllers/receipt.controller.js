@@ -15,8 +15,6 @@ const getReceiptPoints = wrapper(request => {
 
     const receipt = Receipt.findById(id);
 
-    console.dir(receipt);
-
     if (!receipt) throw new ErrorHandler('resource_not_found');
     const { points } = receipt;
 
