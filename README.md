@@ -151,4 +151,4 @@ npm run test
 
 ## Technical Docs
 
-To gain a deeper insight into the technical aspects of how this API has been constructed, please visit the following [webpage](/receipt-processor-challenge/docs/index.html).
+To gain a deeper insight into the technical aspects of how this API has been constructed, please visit the following [webpage](/docs/index.html).
