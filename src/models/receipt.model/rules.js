@@ -1,7 +1,7 @@
 /**
  * Rating rules for the Receipt
  * @type {Object}
- * @memberof Receipt
+ * @memberof ReceiptModel
  */
 const rules = {
     /**

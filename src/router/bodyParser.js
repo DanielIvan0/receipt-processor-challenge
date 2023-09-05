@@ -6,9 +6,10 @@ const bodyParser = json();
 
 /**
  * Handle Request body parsing and ensures JSON integrity. Send json_systax_error to the client if a parsing error occurs.
- * @param {Request} req
- * @param {Response} res
- * @param {Next} next
+ * @memberof Application
+ * @param {Request} req Request object
+ * @param {Response} res Response object
+ * @param {Next} next Next function
  */
 const jsonMiddleware = (req, res, next) => {
     bodyParser(req, res, err => {

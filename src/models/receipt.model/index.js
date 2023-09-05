@@ -6,17 +6,17 @@ const ErrorHandler = require('../../dependencies/ErrorHandler');
 const data = {};
 
 /**
- * Receipt model which communicates to data storage
- * @namespace Receipt
+ * Receipt model which interacts to data storage and determines how the data is structured.
+ * @namespace ReceiptModel
  * @class
  */
-class Model {
+class Receipt {
     /**
-     * Calculates the total of points of a particular Receipt obj
-     * @static
+     * Calculates the total of points of a particular Receipt obj.
      * @method
-     * @param {Object} receiptData
-     * @returns {Number} points
+     * @param {Object} receiptData Receipt data to calculate points
+     * @returns {Integer} Points gained
+     * @memberof ReceiptModel
      */
     static calculatePoints(receiptData) {
         let points = 0;
@@ -32,12 +32,12 @@ class Model {
     }
 
     /**
-     * Validates incoming data, generates an unique id for the Receipt, saves the data and returns the generated id
-     * @static
+     * Validates incoming data, generates an unique id for the Receipt, saves the data and returns the generated id.
      * @method
-     * @param {Object} receiptData 
+     * @param {Object} receiptData Receipt data from the client
      * @returns {String} Generated id of the Receipt
      * @throws {ErrorHandler} Schema Validation Error
+     * @memberof ReceiptModel
      */
     static save(receiptData) {
         const isValidReceipt = SchemaValidator(receiptData);
@@ -53,10 +53,10 @@ class Model {
 
     /**
      * Find and return receipt linked to provided id. Return null if no receipt found for that id.
-     * @static
      * @method
-     * @param {String} id linked to Receipt
+     * @param {String} id ID linked to Receipt
      * @returns {Object} Receipt obj or null if invalid id
+     * @memberof ReceiptModel
      */
     static findById(id) {
         const receipt = data[id];
@@ -66,6 +66,6 @@ class Model {
 };
 
 module.exports = {
-    Model,
+    Receipt,
     Schema,
 };

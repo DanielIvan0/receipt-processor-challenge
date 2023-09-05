@@ -2,7 +2,10 @@ const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 
 /**
- * Schema Validator to validate client's input
+ * Schema Validator to validate client's input.
+ * @namespace SchemaValidator
+ * @package
+ * @generator
  */
 const ajv = new Ajv();
 

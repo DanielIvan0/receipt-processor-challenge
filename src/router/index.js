@@ -1,18 +1,22 @@
 const express = require('express');
-const controllers = require('../controllers');
+const {
+    notFound,
+    errorHandler,
+} = require('../controllers/error.controller');
+const receiptRouter = require('./receipt.route');
 
+/**
+ * Handle all the routes logic. This uses the controllers to respond the request
+ * @memberof Application
+ */
 const router = express.Router();
 
-// POST Receipts
-router.post('/receipts/process', controllers.bodyParser, controllers.submitReceipt);
-
-// Get Receipt points
-router.get('/receipts/:id/points', controllers.getReceipt);
+router.use('/receipts', receiptRouter);
 
 // Handling error 404
-router.use(controllers.notFound);
+router.use(notFound);
 
 // Handling 4xx - 5xx
-router.use(controllers.errorHandler);
+router.use(errorHandler);
 
 module.exports = router;

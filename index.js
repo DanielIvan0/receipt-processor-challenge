@@ -1,9 +1,5 @@
 "use strict";
 
-// Initializing environment variables
-const dotenv = require('dotenv');
-dotenv.config();
-
 // Initializing web app
 const app = require('./src/app');
 

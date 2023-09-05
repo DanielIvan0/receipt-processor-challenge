@@ -1,8 +1,8 @@
 const SchemaValidator = require('../../dependencies/SchemaValidator');
 
 /**
- * Definition of Item Schema
- * @memberof Receipt
+ * Definition of Item Schema.
+ * @memberof ReceiptModel
  */
 const ItemSchema = {
     type: 'object',
@@ -17,11 +17,12 @@ const ItemSchema = {
         },
     },
     required: [ 'shortDescription', 'price' ],
+    additionalProperties: false,
 };
 
 /**
- * Definition of Receipt Schema
- * @memberof Receipt
+ * Definition of Receipt Schema.
+ * @memberof ReceiptModel
  */
 const ReceiptSchema = {
     type: 'object',
@@ -52,10 +53,10 @@ const ReceiptSchema = {
 };
 
 /**
- * Validates structure of incoming data with Receipt Schema definition
+ * Validates structure of incoming data with Receipt Schema definition.
  * @param {Object} receiptData
  * @returns {Boolean} true if and only if satisfies the scheme, false otherwise
- * @memberof Receipt
+ * @memberof ReceiptModel
  */
 const ReceiptValidator = SchemaValidator.compile(ReceiptSchema);
 
