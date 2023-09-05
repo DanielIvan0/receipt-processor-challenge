@@ -1,0 +1,13 @@
+{
+    "source": {
+        "include": [ "." ],
+        "includePattern": ".js$",
+        "exclude": ["node_modules/", "docs", "examples"]
+    },
+    "opts": {
+        "recurse": true,
+        "encoding": "utf8",
+        "destination": "docs",
+        "readme": "./README.md"
+    }
+}
